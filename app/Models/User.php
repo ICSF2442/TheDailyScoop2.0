@@ -41,4 +41,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function likes() {
+        return $this->belongsToMany("App\Models\Article", "likes", "user_id", "article_id");
+        // SELECT
+    }
 }

@@ -14,4 +14,9 @@ class Article extends Model
     {
         return $this->belongsToMany(Tag::class);
     }
+
+    public function likes() {
+        return $this->belongsToMany("App\Models\Article", "likes", "user_id", "article_id");
+        // SELECT
+    }
 }
