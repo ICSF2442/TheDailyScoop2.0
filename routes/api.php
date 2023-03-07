@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -29,8 +30,16 @@ Route::group([
     Route::get('/user',  function (Request $request) {
                                 return $request->user();
                          });
-    
+    Route::get("like/{id}", function(Request $request, $id) {
+        $request->user()->likes()->toggle($id);
+    });
 });
 
 
+Route::get("/articles", function() {
+    return \App\Models\Article::all();
+});
 
+Route::get("/countarticlelikes/{id}", function(Request $request, $id) {
+    return \App\Models\Article::findOrFail($id)->likes()->count();
+});
