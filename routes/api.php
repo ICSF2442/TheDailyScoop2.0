@@ -43,6 +43,15 @@ Route::group([
         $comment->save();
         return $comment;
     });
+
+    Route::get('/removecomment/{comment_id}', function(Request $request, $comment_id) {
+        $comment = \App\Models\Comment::findOrFail($comment_id);
+        if($comment->user_id == $request->user()->id) {
+            $comment->delete();
+            return "Comment deleted";
+        }
+        return "You can't delete this comment";
+    });
 });
 
 
