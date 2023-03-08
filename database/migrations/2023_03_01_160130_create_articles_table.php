@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('thumbnailURL');
             $table->string('mediaType')->nullable();
             $table->string('mediaURL')->nullable();
+            $table->string('likes_count')->default(0);
             $table->boolean('leadStory');
             $table->timestamps();
         });

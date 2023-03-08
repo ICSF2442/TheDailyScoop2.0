@@ -32,6 +32,8 @@ Route::group([
                          });
     Route::get("like/{id}", function(Request $request, $id) {
         $request->user()->likes()->toggle($id);
+        return \App\Models\Article::findOrFail($id)->likes()->count();
+
     });
 });
 
@@ -40,6 +42,24 @@ Route::get("/articles", function() {
     return \App\Models\Article::all();
 });
 
+Route::get("/article/{id}", function($id) {
+    return \App\Models\Article::findOrFail($id);
+});
+
+Route::post('/article', function(Request $request) {
+    
+    $article = new \App\Models\Article();
+    $article->title = $request->title;
+    $article->body = $request->body;
+    $article->save();
+    return $article;
+});
+
+Route::get('toparticles', function() {
+    return \App\Models\Article::orderBy('likes_count', 'desc')->get();
+});
+
 Route::get("/countarticlelikes/{id}", function(Request $request, $id) {
     return \App\Models\Article::findOrFail($id)->likes()->count();
 });
+
