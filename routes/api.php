@@ -54,8 +54,19 @@ Route::post('/article', function(Request $request) {
 });
 
 Route::get('toparticles', function() {
-    return \App\Models\Article::orderBy('likes_count', 'desc')->get();
+    
+    $articles = \App\Models\Article::all();
+    $topArticles = [];
+    foreach($articles as $article) {
+        $topArticles[$article->id] = $article->likes()->count();
+    }
+    arsort($topArticles);
+    $topArticles = array_slice($topArticles, 0, 10, true);
+    $topArticles = array_keys($topArticles);
+    $topArticles = \App\Models\Article::find($topArticles);
+    return $topArticles;
 });
+
 
 Route::get("/countarticlelikes/{id}", function(Request $request, $id) {
     return \App\Models\Article::findOrFail($id)->likes()->count();
