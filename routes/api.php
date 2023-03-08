@@ -84,9 +84,15 @@ Route::get('toparticles', function() {
     $topArticles = array_slice($topArticles, 0, 10, true);
     $topArticles = array_keys($topArticles);
     $topArticles = \App\Models\Article::find($topArticles);
-    return $topArticles;
+    //return articles with likes count
+    
+    
 });
 
+//get all articles with comments
+Route::get("/articleswithcomments", function() {
+    return \App\Models\Article::with("comments")->get();
+});
 
 Route::get("/countarticlelikes/{id}", function(Request $request, $id) {
     return \App\Models\Article::findOrFail($id)->likes()->count();
