@@ -32,8 +32,6 @@ Route::group([
                          });
     Route::get("like/{id}", function(Request $request, $id) {
         $request->user()->likes()->toggle($id);
-        return \App\Models\Article::findOrFail($id)->likes()->count();
-
     });
 });
 
