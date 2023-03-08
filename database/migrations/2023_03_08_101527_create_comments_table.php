@@ -11,23 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('content');
-            $table->string('thumbnailURL')->nullable();
-            $table->string('mediaType')->nullable();
-            $table->string('mediaURL')->nullable();
-            $table->boolean('leadStory') ->default(false);
+            $table->foreignId('article_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+            $table->string('content');
             $table->timestamps();
         });
     }
 
+    
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('comments');
     }
 };

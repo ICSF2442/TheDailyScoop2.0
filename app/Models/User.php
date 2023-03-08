@@ -46,4 +46,8 @@ class User extends Authenticatable
         return $this->belongsToMany("App\Models\Article", "likes", "user_id", "article_id");
         // SELECT
     }
+
+    public function comments() {
+        return $this->hasMany("App\Models\Comment");
+    }
 }

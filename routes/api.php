@@ -30,8 +30,18 @@ Route::group([
     Route::get('/user',  function (Request $request) {
                                 return $request->user();
                          });
-    Route::get("like/{id}", function(Request $request, $id) {
-        $request->user()->likes()->toggle($id);
+    Route::get("like/{article_id}", function(Request $request, $article_id) {
+        $request->user()->likes()->toggle($article_id);
+        return $request->user()->likes()->count();
+    });
+
+    Route::post('/comment/{article_id}', function(Request $request, $article_id) {
+        $comment = new \App\Models\Comment();
+        $comment->content = $request->content;
+        $comment->article_id = $article_id;
+        $comment->user_id = $request->user()->id;
+        $comment->save();
+        return $comment;
     });
 });
 
@@ -48,7 +58,7 @@ Route::post('/article', function(Request $request) {
     
     $article = new \App\Models\Article();
     $article->title = $request->title;
-    $article->body = $request->body;
+    $article->content = $request->content;
     $article->save();
     return $article;
 });
@@ -59,6 +69,7 @@ Route::get('toparticles', function() {
     $topArticles = [];
     foreach($articles as $article) {
         $topArticles[$article->id] = $article->likes()->count();
+       
     }
     arsort($topArticles);
     $topArticles = array_slice($topArticles, 0, 10, true);
@@ -71,4 +82,12 @@ Route::get('toparticles', function() {
 Route::get("/countarticlelikes/{id}", function(Request $request, $id) {
     return \App\Models\Article::findOrFail($id)->likes()->count();
 });
+
+
+
+Route::get("/comments/{article_id}", function($article_id) {
+    return \App\Models\Comment::where("article_id", $article_id)->get();
+});
+
+
 

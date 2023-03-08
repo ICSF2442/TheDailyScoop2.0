@@ -16,7 +16,11 @@ class Article extends Model
     }
 
     public function likes() {
-        return $this->belongsToMany("App\Models\Article", "likes", "user_id", "article_id");
+        return $this->belongsToMany("App\Models\User", "likes", "article_id", "user_id");
         // SELECT
+    }
+
+    public function comments() {
+        return $this->hasMany("App\Models\Comment");
     }
 }
