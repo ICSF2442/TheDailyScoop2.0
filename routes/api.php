@@ -68,6 +68,11 @@ Route::post('/postarticle', function(Request $request) {
     $article = new \App\Models\Article();
     $article->title = $request->title;
     $article->content = $request->content;
+    $article->thumbnailURL = $request->thumbnailURL;
+    $article->mediaType = $request->mediaType;
+    $article->mediaURL = $request->mediaURL;
+    $article->leadStory = $request->leadStory;
+    
     $article->save();
     return $article;
 });
