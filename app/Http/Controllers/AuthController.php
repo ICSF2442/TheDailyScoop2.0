@@ -16,13 +16,14 @@ class AuthController extends Controller
                    'name' => 'required|string|max:255',
                    'email' => 'required|string|email|max:255|unique:users',
                    'password' => 'required|string|min:8',
+                     'level' => 'required|string|max:255',
     ]);
 
     $user = User::create([
                    'name' => $validatedData['name'],
                    'email' => $validatedData['email'],
                    'password' => Hash::make($validatedData['password']),
-                   'level' => 'user',
+                   'level' => $validatedData['level'],
     ]);
 
     $token = $user->createToken('auth_token')->plainTextToken;
@@ -52,6 +53,7 @@ class AuthController extends Controller
     return response()->json([
            'access_token' => $token,
            'token_type' => 'Bearer',
+           'level' => $user->level,
     ]);
     }
 
