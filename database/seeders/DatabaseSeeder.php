@@ -32,15 +32,6 @@ class DatabaseSeeder extends Seeder
             'leadStory' => false
         ]);
 
-        $article = Article::create([
-            'title' => 'Copucou',
-            'content' => '<h1>Hello from ecoal</h1><p>Nice to see you in <strong>Lens</strong>. Enjoy !</p>',
-            'thumbnailURL' => '/ecoal.jpg',
-            'mediaType' => 'image',
-            'mediaURL' => '/ecoal.jpg',
-            'leadStory' => false
-        ]);
-
         $tag1 = Tag::create(['name' => 'ecoal23']);
         $tag2 = Tag::create(['name' => 'react']);
 
