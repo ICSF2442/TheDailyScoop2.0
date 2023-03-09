@@ -64,7 +64,7 @@ Route::get("/article/{id}", function($id) {
 });
 
 Route::post('/postarticle', function(Request $request) {
-    
+
     $article = new \App\Models\Article();
     $article->title = $request->title;
     $article->content = $request->content;
@@ -73,33 +73,41 @@ Route::post('/postarticle', function(Request $request) {
 });
 
 Route::get('toparticles', function() {
-    
+
     $articles = \App\Models\Article::all();
     $topArticles = [];
     foreach($articles as $article) {
         $topArticles[$article->id] = $article->likes()->count();
-       
+
     }
     arsort($topArticles);
     $topArticles = array_slice($topArticles, 0, 10, true);
     $topArticles = array_keys($topArticles);
     $topArticles = \App\Models\Article::find($topArticles);
-    //return articles with likes count
-    
-    
+    return $topArticles;
+
+
 });
 
 //get all articles with comments
 Route::get("/articleswithcomments", function() {
     return \App\Models\Article::with("comments")->get();
 });
-
+//Count likes from an article
 Route::get("/countarticlelikes/{id}", function(Request $request, $id) {
     return \App\Models\Article::findOrFail($id)->likes()->count();
 });
+//Get all tags from an article
+Route::get("/tags/{article_id}", function(Request $request, $article_id){
+    return \App\Models\Article::findOrFail($article_id)->tags;
+});
 
+//Get all articles from a tag
+Route::get("/articles/{tag_id}", function (Request $request, $tag_id){
+    return \App\Models\Tag::findOrFail($tag_id)->articles;
+});
 
-
+//Get all coments from an article
 Route::get("/comments/{article_id}", function($article_id) {
     return \App\Models\Comment::where("article_id", $article_id)->get();
 });
