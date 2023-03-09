@@ -63,7 +63,7 @@ Route::get("/article/{id}", function($id) {
     return \App\Models\Article::findOrFail($id);
 });
 
-Route::post('/article', function(Request $request) {
+Route::post('/postarticle', function(Request $request) {
     
     $article = new \App\Models\Article();
     $article->title = $request->title;
