@@ -52,6 +52,11 @@ Route::group([
         }
         return "You can't delete this comment";
     });
+    
+
+    Route::get('/getLevel', function(Request $request) {
+        return $request->user()->level;
+    });
 });
 
 
@@ -72,7 +77,7 @@ Route::post('/postarticle', function(Request $request) {
     $article->mediaType = $request->mediaType;
     $article->mediaURL = $request->mediaURL;
     $article->leadStory = $request->leadStory;
-    
+
     $article->save();
     return $article;
 });

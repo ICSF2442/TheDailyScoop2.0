@@ -22,13 +22,15 @@ class AuthController extends Controller
                    'name' => $validatedData['name'],
                    'email' => $validatedData['email'],
                    'password' => Hash::make($validatedData['password']),
+                   'level' => 'user',
     ]);
 
     $token = $user->createToken('auth_token')->plainTextToken;
 
     return response()->json([
                    'access_token' => $token,
-                   'token_type' => 'Bearer',
+                   'token_type' => 'Bearer',   
+                    'level' => $user->level ,
     ]);
     }
 
