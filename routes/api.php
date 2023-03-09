@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Http\Controllers\AuthController;
-
+use App\Models\Article;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -52,7 +52,7 @@ Route::group([
         }
         return "You can't delete this comment";
     });
-    
+
 
     Route::get('/getLevel', function(Request $request) {
         return $request->user()->level;
@@ -69,7 +69,7 @@ Route::get("/article/{id}", function($id) {
 });
 
 Route::post('/postarticle', function(Request $request) {
-    
+
     $article = new \App\Models\Article();
     $article->title = $request->title;
     $article->content = $request->content;
@@ -83,20 +83,20 @@ Route::post('/postarticle', function(Request $request) {
 });
 
 Route::get('toparticles', function() {
-    
+
     $articles = \App\Models\Article::all();
     $topArticles = [];
     foreach($articles as $article) {
         $topArticles[$article->id] = $article->likes()->count();
-       
+
     }
     arsort($topArticles);
     $topArticles = array_slice($topArticles, 0, 10, true);
     $topArticles = array_keys($topArticles);
     $topArticles = \App\Models\Article::find($topArticles);
     //return articles with likes count
-    
-    
+
+
 });
 
 //get all articles with comments
