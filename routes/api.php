@@ -117,6 +117,8 @@ Route::get('toparticles', function() {
 Route::get("/articleswithcomments", function() {
     return \App\Models\Article::with("comments")->get();
 });
+
+
 //Count likes from an article
 Route::get("/countarticlelikes/{id}", function(Request $request, $id) {
     return \App\Models\Article::findOrFail($id)->likes()->count();

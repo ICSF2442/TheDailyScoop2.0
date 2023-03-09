@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('mediaType')->nullable();
             $table->string('mediaURL')->nullable();
             $table->boolean('leadStory') ->default(false);
+            $table->string('author')->nullable();
             $table->timestamps();
         });
     }
