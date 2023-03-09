@@ -71,19 +71,15 @@ Route::get("/article/{id}", function($id) {
 Route::post('/postarticle', function(Request $request) {
 
     $article = new \App\Models\Article();
-<<<<<<< HEAD
+
     $article->title = $request->input("title");
     $article->content = $request->input("content");
     $article->sumary = $request->input("sumary");
-    $article->mediaURL = $request->input("image");
-=======
-    $article->title = $request->title;
-    $article->content = $request->content;
     $article->thumbnailURL = $request->thumbnailURL;
     $article->mediaType = $request->mediaType;
     $article->mediaURL = $request->mediaURL;
     $article->leadStory = $request->leadStory;
->>>>>>> origin/main
+
 
     $article->save();
     $tags = explode(" ",$request->tags);
@@ -113,10 +109,8 @@ Route::get('toparticles', function() {
     $topArticles = \App\Models\Article::find($topArticles);
     return $topArticles;
 
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/main
+
 });
 
 //get all articles with comments
