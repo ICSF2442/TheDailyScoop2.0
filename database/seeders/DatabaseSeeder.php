@@ -31,11 +31,11 @@ class DatabaseSeeder extends Seeder
             'mediaURL' => '/ecoal.jpg',
             'leadStory' => false
         ]);
-     
+
         $tag1 = Tag::create(['name' => 'ecoal23']);
         $tag2 = Tag::create(['name' => 'react']);
 
         $article->tags()->attach([$tag1->id, $tag2->id]);
-       
+
     }
 }
