@@ -35,13 +35,16 @@ Route::group([
         return $request->user()->likes()->count();
     });
 
-    Route::post('/comment/{article_id}', function(Request $request, $article_id) {
+    Route::post('/comment/{article_id}/{comment}', function(Request $request, $article_id,$comment) {
         $comment = new \App\Models\Comment();
-        $comment->content = $request->input("content");
+        $comment->comment_text = $request->$comment;
         $comment->article_id = $article_id;
         $comment->user_id = $request->user()->id;
         $comment->save();
-        return $comment;
+        return response()->json([
+            'message' => 'Comment added successfully!',
+            'comment' => $comment
+        ], 201);
     });
 
     Route::get('/removecomment/{comment_id}', function(Request $request, $comment_id) {
