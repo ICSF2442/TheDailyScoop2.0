@@ -94,8 +94,7 @@ Route::get('toparticles', function() {
     $topArticles = array_slice($topArticles, 0, 10, true);
     $topArticles = array_keys($topArticles);
     $topArticles = \App\Models\Article::find($topArticles);
-    //return articles with likes count
-
+    return $topArticles;
 
 });
 
