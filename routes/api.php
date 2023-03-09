@@ -37,7 +37,7 @@ Route::group([
 
     Route::post('/comment/{article_id}', function(Request $request, $article_id) {
         $comment = new \App\Models\Comment();
-        $comment->content = $request->content;
+        $comment->content = $request->input("content");
         $comment->article_id = $article_id;
         $comment->user_id = $request->user()->id;
         $comment->save();
@@ -66,9 +66,22 @@ Route::get("/article/{id}", function($id) {
 Route::post('/postarticle', function(Request $request) {
 
     $article = new \App\Models\Article();
-    $article->title = $request->title;
-    $article->content = $request->content;
+    $article->title = $request->input("title");
+    $article->content = $request->input("content");
+    $article->sumary = $request->input("sumary");
+    $article->mediaURL = $request->input("image");
+
     $article->save();
+    $tags = explode(" ",$request->tags);
+    foreach($tags as $tag) {
+        $t = \App\Models\Tag::where("name", $tag)->first();
+        if($t == null) {
+            $t = new \App\Models\Tag();
+            $t->name = $tag;
+            $t->save();
+        }
+        $article->tags()->attach($t->id);
+    }
     return $article;
 });
 
