@@ -142,7 +142,14 @@ Route::get("/articles/{tag_id}", function (Request $request, $tag_id){
 
 //Get all coments from an article
 Route::get("/comments/{article_id}", function($article_id) {
-    return \App\Models\Comment::where("article_id", $article_id)->get();
+
+    //add names to the comments
+    $comments = \App\Models\Comment::where("article_id", $article_id)->get();
+    foreach($comments as $comment) {
+        $comment->name = \App\Models\User::findOrFail($comment->user_id)->name;
+    }
+    return $comments;
+    
 });
 
 //get all tags in the database
@@ -150,11 +157,6 @@ Route::get("/tags", function() {
     return \App\Models\Tag::all();
 });
 
-
-Route::get("/getusername/{id}", function($id) {
-    return \App\Models\User::findOrFail($id)->name;
-
-});
 
 
 
