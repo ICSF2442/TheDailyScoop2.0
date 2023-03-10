@@ -70,6 +70,8 @@ The Cartier and Tiffany AR campaigns are the latest in a series of collaboration
 
 "Brands are tapping into Snapchat’s largely Gen Z community to make the world a bit more interactive and a bit more fun,” says Geoffrey Perez, head of luxury at Snap.
 
+
+
 ',
             'thumbnailURL' => 'https://cdn.discordapp.com/attachments/1083391300780445709/1083414582506311822/f-design.jpg',
             'sumary' => 'Cartier and Tiffany created AR campaigns in collaboration with Snapchat to get people to experience luxury from home. ',
