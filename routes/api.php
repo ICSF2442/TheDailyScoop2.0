@@ -38,16 +38,16 @@ Route::group([
     });
 
     Route::post('/comment/{article_id}/{comment}', function(Request $request, $article_id,$c) {
-        $comment = new \App\Models\Comment();
-        $comment->comment_text = $c;
-        $comment->article_id = $article_id;
-        $comment->user_id = $request->user()->id;
-        $comment->save();
-        return response()->json([
-            'message' => 'Comment added successfully!',
-            'comment' => $comment
-        ], 201);
-    });
+    $comment = new \App\Models\Comment();
+    $comment->comment_text = $c;
+    $comment->article_id = $article_id;
+    $comment->user_id = $request->user()->id;
+    $comment->save();
+    return response()->json([
+        'message' => 'Comment added successfully!',
+        'comment' => $comment
+    ], 201);
+});
     
     Route::get('/removecomment/{comment_id}', function(Request $request, $comment_id) {
         $comment = \App\Models\Comment::findOrFail($comment_id);
