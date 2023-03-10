@@ -149,5 +149,9 @@ Route::get("/tags", function() {
 });
 
 
+//get if the user has liked the article
+Route::get("/hasliked/{article_id}", function(Request $request, $article_id) {
+    return $request->user()->likes()->where("article_id", $article_id)->exists();
+});
 
 
