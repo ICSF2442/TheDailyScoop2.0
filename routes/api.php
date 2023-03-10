@@ -48,11 +48,7 @@ Route::group([
         'comment' => $comment
     ], 201);
 
-
-    //get if the user has liked the article
-    Route::get("/hasliked/{article_id}", function(Request $request, $article_id) {
-    return $request->user()->likes()->where("article_id", $article_id)->exists();
-});
+    
 });
     
     Route::get('/removecomment/{comment_id}', function(Request $request, $comment_id) {
@@ -154,6 +150,11 @@ Route::get("/tags", function() {
     return \App\Models\Tag::all();
 });
 
+
+Route::get("/getusername/{id}", function($id) {
+    return \App\Models\User::findOrFail($id)->name;
+
+});
 
 
 
