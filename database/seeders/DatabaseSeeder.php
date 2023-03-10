@@ -39,8 +39,6 @@ class DatabaseSeeder extends Seeder
 
 Seizing the opportunity to open more revenue streams and business models, fashion companies are partnering with technology providers, snapping up startups, and even building their own tech.
 
-To read more about the different technologies being used click here:
-https://www.cbinsights.com/research/report/fashion-tech-future-trends/
 ',
             'thumbnailURL' => 'https://cdn.discordapp.com/attachments/1083391300780445709/1083414582506311822/f-design.jpg',
             'sumary' => 'Robots that sew and cut fabric, AI algorithms that predict style trends, clothes to be worn in virtual reality – changing the fashion space.',
@@ -55,9 +53,6 @@ https://www.cbinsights.com/research/report/fashion-tech-future-trends/
             'content' => 'Robots that sew and cut fabric, AI algorithms that predict style trends, clothes to be worn in virtual reality — an array of innovations show how technology is automating, personalizing, and speeding up the fashion space. Now anyone can play the role of Donatella Versace and Virgil Abloh.
 
 Seizing the opportunity to open more revenue streams and business models, fashion companies are partnering with technology providers, snapping up startups, and even building their own tech.
-
-To read more about the different technologies being used click here:
-https://www.cbinsights.com/research/report/fashion-tech-future-trends/
 ',
             'thumbnailURL' => 'https://cdn.discordapp.com/attachments/1083391300780445709/1083414582506311822/f-design.jpg',
             'sumary' => 'Digital technologies such AR, AI and NFT offer new opportunities for luxury fashion brands.',
@@ -75,8 +70,6 @@ The Cartier and Tiffany AR campaigns are the latest in a series of collaboration
 
 "Brands are tapping into Snapchat’s largely Gen Z community to make the world a bit more interactive and a bit more fun,” says Geoffrey Perez, head of luxury at Snap.
 
-To learn more about how brands are using Snapchat for interactive advertising click here:
-https://www.technologyreview.com/2023/03/07/1069414/cartier-tiffany-ar-luxury-gen-z/
 ',
             'thumbnailURL' => 'https://cdn.discordapp.com/attachments/1083391300780445709/1083414582506311822/f-design.jpg',
             'sumary' => 'Cartier and Tiffany created AR campaigns in collaboration with Snapchat to get people to experience luxury from home. ',
@@ -93,8 +86,6 @@ The use of technology in sports is growing rapidly. In football, for instance, n
 
 One of the most famous and recent technologies introduced in football, is called “goal line technology”. It is used to determine if a ball has crossed the goal line, in order to support the referee. Wearable devices that can monitor heart rate were integrated with tracking technologies that include global positioning system (GPS), accelerometer and gyroscope sensors, which are used to describe the athletes’ movement and physical demands. Therefore, these new technologies can assess the number of collisions and jumps that occur during a match.
 
-To learn more about new technologies being used in football click here:
-https://www.technogym.com/vn/wellness/the-benefits-of-using-technology-in-sport/
 ',
             'thumbnailURL' => 'https://cdn.discordapp.com/attachments/1083391300780445709/1083414582506311822/f-design.jpg',
             'sumary' => 'The use of technology is growing rapidly in football as there are new technologies being introduced to help coaches, referees and players.
@@ -109,8 +100,6 @@ https://www.technogym.com/vn/wellness/the-benefits-of-using-technology-in-sport/
 
 The Review aims to provide readers with a one-stop resource which details the key aspects shaping the landscape and reflecting subjects that shape current conversations. Sustainability is being taken more seriously by more venues and manufacturers. Crypto’s crash is giving pause for thought in the NFT and token space but, despite this, blockchain and Web3 seem to have kept momentum as organisations prepare for widespread adoption of the metaverse.
 
-To learn more about the technologies on the rise in the sports industry click here:
-https://businesscloud.co.uk/opinion/the-key-trends-shaping-global-sport-ahead-of-2023/
 ',
             'thumbnailURL' => 'https://cdn.discordapp.com/attachments/1083391300780445709/1083414582506311822/f-design.jpg',
             'sumary' => 'The The Sports Technology Annual Review and Power List points to tech-led innovation’s power within the whole sports market.',
@@ -123,9 +112,6 @@ https://businesscloud.co.uk/opinion/the-key-trends-shaping-global-sport-ahead-of
             'content' => 'Music has been evolving at rocket speed with the invention of new technologies. AI has become an important part of the music industry, with its many different uses.
 
 AI can be used to compose new music, create unique and interesting mashups, and even help create robotic performers. This can make anyone sound like their favourite artist from Ariana Grande to The Weeknd. It can also be used to analyse music and identify patterns, allowing for more personalised and targeted music recommendations. Moreover, there are new technologies being developed to produce AI-generated lyrics, which could have meaningful emotional content. The possibilities for AI technology in the music industry are endless, and it will be interesting to see where it can take us in the future.
-
-To read more about the impacts of artificial intelligence in the music world click here:
-https://www.stilllisteningmagazine.com/features/2023-the-rise-of-artificial-intelligence-in-music
 ',
             'thumbnailURL' => 'https://cdn.discordapp.com/attachments/1083391300780445709/1083414582506311822/f-design.jpg',
             'sumary' => 'AI is becoming an important part of the music industry, with its many different uses. ',
@@ -141,8 +127,6 @@ These shifts are documented in TikTok’s What’s Next 2023 Trend Report, the s
 
 The latest report not only unpacks several long-term TikTok-first cultural forces, from fun to functional, but also illustrates the underlying signals that show how each of these has shaped trends that provide a roadmap for brands to follow on the platform.
 
-To learn more about how TikTok plays a large role for marketing in the music industry click here:
-https://www.searchenginejournal.com/key-insights-from-tiktok-in-the-whats-next-2023-trend-report/474437/
 ',
             'thumbnailURL' => 'https://cdn.discordapp.com/attachments/1083391300780445709/1083414582506311822/f-design.jpg',
             'sumary' => 'TikTok’s What’s Next 2023 Trend Report shows the power that TikTok as for digital advertisers. ',
@@ -176,8 +160,6 @@ LinkedIn
 Days: Tuesday, Wednesday, Thursday
 Times: 9AM, 10AM, 12PM
 
-To read more about how to reach your target audience using social media click here:
-https://music3point0.com/2023/01/10/the-best-times-to-post-on-social-media-for-2023/
 ',
             'thumbnailURL' => 'https://cdn.discordapp.com/attachments/1083391300780445709/1083414582506311822/f-design.jpg',
             'sumary' => 'A list of the best times to post on social media for promoting has been compiled by Giraffe social media.',
@@ -191,8 +173,6 @@ https://music3point0.com/2023/01/10/the-best-times-to-post-on-social-media-for-2
 
 These AI models generate stunning imagery from simple phrases which is fun to use for many. It allows for those who don’t have the skills to make the art they aspire to create become a reality. Furthermore, AI software is evolving into a powerful creative and commercial tool. Type in a short description of pretty much anything, and you get a picture of what you asked for in seconds. Nothing will be the same again.
 
-To read more about the AI and the way it creates images click here:
-https://www.technologyreview.com/2023/01/09/1064864/image-making-ai-10-breakthrough-technologies-2023/
 ',
             'thumbnailURL' => 'https://cdn.discordapp.com/attachments/1083391300780445709/1083414582506311822/f-design.jpg',
             'sumary' => 'New AI software models by Google, OpenAI, and more are now generating artworks based off text prompts.',
