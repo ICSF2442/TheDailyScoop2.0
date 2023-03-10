@@ -3,10 +3,12 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 use App\Models\Article;
 use App\Models\Tag;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -224,6 +226,70 @@ As technology continues to evolve, we can expect to see even more exciting devel
         $article9->tags()->attach([$tag1->id,$tag9->id,$tag5->id,$tag3->id,$tag4->id]);
         $article10->tags()->attach([$tag1->id,$tag4->id]);
         $article11->tags()->attach([$tag1->id,$tag4->id]);
+
+        $user1 = User::create([
+            'name' => 'test110' ,
+            'email' => 'email110' ,
+            'password' => Hash::make((string)'123110' ),
+            'level' => 'user',
+        ]);
+        $user2 = User::create([
+            'name' => 'test210' ,
+            'email' => 'email210' ,
+            'password' => Hash::make((string)'123210' ),
+            'level' => 'user',
+        ]);
+        $user3 = User::create([
+            'name' => 'test310' ,
+            'email' => 'email310' ,
+            'password' => Hash::make((string)'123310' ),
+            'level' => 'user',
+        ]);
+        $user4 = User::create([
+            'name' => 'test410' ,
+            'email' => 'email410' ,
+            'password' => Hash::make((string)'123410' ),
+            'level' => 'user',
+        ]);
+        $user5 = User::create([
+            'name' => 'test510' ,
+            'email' => 'email510' ,
+            'password' => Hash::make((string)'123510' ),
+            'level' => 'user',
+        ]);
+        $user6 = User::create([
+            'name' => 'test610' ,
+            'email' => 'email610' ,
+            'password' => Hash::make((string)'123610' ),
+            'level' => 'user',
+        ]);
+        $user7 = User::create([
+            'name' => 'test710' ,
+            'email' => 'email710' ,
+            'password' => Hash::make((string)'123710' ),
+            'level' => 'user',
+        ]);
+
+
+
+        for($i = 0; $i <= 49; $i++) {
+            User::create([
+                'name' => 'test' . $i,
+                'email' => 'email' . $i,
+                'password' => Hash::make((string)'123' . $i),
+                'level' => 'user',
+            ]);
+        }
+            User::create([
+                'name' => 'Journalist',
+                'email' => 'email@journalist',
+                'password' => Hash::make((string)'12345journalist'),
+                'level' => 'journalist',
+            ]);
+        
+
+
+
 
 
 
