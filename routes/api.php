@@ -22,6 +22,8 @@ use App\Models\Article;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
+
+
 Route::group([
     'middleware' => 'auth:sanctum',
 ], function () {
@@ -35,15 +37,18 @@ Route::group([
         return $request->user()->likes()->count();
     });
 
-    Route::post('/comment/{article_id}', function(Request $request, $article_id) {
+    Route::post('/comment/{article_id}/{comment}', function(Request $request, $article_id,$c) {
         $comment = new \App\Models\Comment();
-        $comment->content = $request->input("content");
+        $comment->comment_text = $c;
         $comment->article_id = $article_id;
         $comment->user_id = $request->user()->id;
         $comment->save();
-        return $comment;
+        return response()->json([
+            'message' => 'Comment added successfully!',
+            'comment' => $comment
+        ], 201);
     });
-
+    
     Route::get('/removecomment/{comment_id}', function(Request $request, $comment_id) {
         $comment = \App\Models\Comment::findOrFail($comment_id);
         if($comment->user_id == $request->user()->id) {
@@ -137,6 +142,12 @@ Route::get("/articles/{tag_id}", function (Request $request, $tag_id){
 Route::get("/comments/{article_id}", function($article_id) {
     return \App\Models\Comment::where("article_id", $article_id)->get();
 });
+
+//get all tags in the database
+Route::get("/tags", function() {
+    return \App\Models\Tag::all();
+});
+
 
 
 

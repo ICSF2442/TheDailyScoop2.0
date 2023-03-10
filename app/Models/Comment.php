@@ -10,6 +10,13 @@ class Comment extends Model
     use HasFactory;
 
     
+    protected $fillable = [
+        'comment_text',
+        'article_id',
+        'user_id',
+    ];
+
+    
 
     public function article() {
         return $this->belongsTo("App\Models\Article");

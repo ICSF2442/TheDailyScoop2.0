@@ -9,7 +9,7 @@ vendor
 .env
 .env.backup
 .env.production
-# database/database.sqlite
+database/database.sqlite
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
